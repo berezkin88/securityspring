@@ -58,11 +58,21 @@ public class UserController {
             model.addAttribute("error", "Username or Password is incorrect");
         }
 
-        if (logout!= null){
+        if (logout != null) {
             model.addAttribute("message", "Logged out successfully");
         }
 
         return "login";
+    }
+
+    @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
+    public String welcome(Model model) {
+        return "welcome";
+    }
+
+    @RequestMapping(value = "/admin", method = RequestMethod.GET)
+    public String admin(Model model) {
+        return "admin";
     }
 
 
